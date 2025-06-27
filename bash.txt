@@ -1,0 +1,67 @@
+--Deploying a Web Server Using Docker and Kubernetes on Ubuntu
+
+
+-Build the Docker image
+  docker build -t my-webserver:v1.0 .
+
+  Apply the deployment
+kubectl apply -f deployment-vol.yaml
+kubectl apply -f service.yaml
+kubectl apply -f cnfgmap.yaml
+          OR
+kubectl apply -f . # it will run all yaml file in thah current directory or project
+
+Verify the deployment
+
+# Check deployments
+kubectl get deployments
+
+# Check pods
+kubectl get pods
+
+# Check services
+kubectl get services
+
+# Describe a specific pod
+kubectl describe pod <pod-name>
+
+# Execute commands in a pod
+kubectl exec -it <pod-name> -- /bin/sh
+
+Access via port forwarding 
+#command
+kubectl port-forward service/webserver-service 8080:80
+
+Then access http://localhost:8080
+
+
+
+Update the application
+# Build new version
+docker build -t my-webserver:v2.0 .
+
+
+# Update deployment
+kubectl set image deployment/webserver-deployment webserver=my-webserver:v2.0
+
+# Check rollout status
+kubectl rollout status deployment/webserver-deployment
+
+#Rollback if needed
+kubectl rollout undo deployment/webserver-deployment
+
+Monitoring and Troubleshooting
+
+View logs
+
+# Get pod logs
+kubectl logs -l app=webserver
+
+# Follow logs in real-time
+kubectl logs -f -l app=webserver
+
+#Clean Up
+ Delete resources
+ 
+ kubectl delete -f service.yaml
+ kubectl delete -f deployment.yaml
