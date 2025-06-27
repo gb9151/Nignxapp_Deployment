@@ -3,7 +3,7 @@
 [![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)](https://kubernetes.io/)
 [![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 [![Nginx](https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white)](https://nginx.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+
 
 A comprehensive example demonstrating how to deploy a web server using **Docker** and **Kubernetes** on Ubuntu, with HTML content served from a **ConfigMap**. This project showcases modern containerization and orchestration practices.
 
@@ -410,9 +410,7 @@ kubectl apply -f k8s/
 - Include documentation for new features
 - Add tests where appropriate
 
-## 📜 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
